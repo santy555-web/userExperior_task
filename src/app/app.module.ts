@@ -5,7 +5,9 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './common/dashboard/dashboard.component';
 import { PageNotFoundComponent } from './common/page-not-found/page-not-found.component';
 import { HttpClientModule } from "@angular/common/http";
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { MyToasterService } from './services/toastr.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,10 +16,12 @@ import { HttpClientModule } from "@angular/common/http";
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
+    ToastrModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [],
+  providers: [MyToasterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

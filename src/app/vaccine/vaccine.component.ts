@@ -14,12 +14,10 @@ export class VaccineComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedCountry = 'India';
-    this.vaccine_service.getVaccineData(`${this.selectedCountry}`).subscribe((data) => {
-      this.vaccinatedList.push(data);
-    });
-    this.vaccine_service.getVaccinatedCountry().subscribe((data) => {
+      this.vaccine_service.getVaccinatedCountry().subscribe((data) => {
       this.vaccinated_country.push(data);
     });
+    this.onChange(this.selectedCountry)
   }
   onChange(event){
     this.vaccinatedList = [];

@@ -20,20 +20,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedCountry = 'India';
-    this.service.getCountryData(`${this.selectedCountry}`).subscribe((data) => {
-      this._countryData.push(data);
-      this.temp = data;
-      this.activeCases =
-        this.temp.All.confirmed -
-        (this.temp.All.recovered + this.temp.All.deaths);
-      this.cases_per_million =
-        (this.temp.All.confirmed / this.temp.All.population) * 1000000;
-      this.active_ratio = (this.activeCases / this.temp.All.confirmed) * 100;
-      this.recovery_ratio =
-        (this.temp.All.recovered / this.temp.All.confirmed) * 100;
-      this.death_ratio = (this.temp.All.deaths / this.temp.All.confirmed) * 100;
-    });
-
+    this.onCountryChange(this.selectedCountry);
     this.service.getCountryData('').subscribe((data) => {
       this.countryList.push(data);
     });

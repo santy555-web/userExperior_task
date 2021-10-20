@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../services/app.service';
+import { MyToasterService } from '../services/toastr.service';
 
 @Component({
   selector: 'app-state',
@@ -7,25 +8,35 @@ import { AppService } from '../services/app.service';
   styleUrls: ['./state.component.css']
 })
 export class StateComponent implements OnInit {
-  indianData = [];
+  selectedCountryData = [];
   countryData = [];
   countryName :string ;
-  constructor(private service :AppService) { }
+  temp;
+  result;
+  constructor(private service :AppService, private toaster: MyToasterService) { }
 
   ngOnInit(): void {
-    this.service.getStateData('India').subscribe((data)=>{
-      this.indianData.push(data);
-    });
     this.service.getCountryData('').subscribe((data) => {
       this.countryData.push(data);
     });
     this.countryName = "India";
+    this.onCountryChange(this.countryName)
+
   }
 
   onCountryChange(event){
-    this.indianData =[]
+    this.selectedCountryData =[]
     this.service.getCountryData(`${event}`).subscribe((data) => {
-      this.indianData.push(data);
+      this.selectedCountryData.push(data);
+      this.temp = data;
+      let array_2 = Object.keys(this.temp).map((key) => [String(key), this.temp[key]]);
+      this.result = array_2.filter((element, index) => index > 0);
+      if(this.result.length ===0)
+      {
+        this.toaster.showToast('Error', 'There is no State!!!', 'error');
+      }
     });
+
   }
+
 }
