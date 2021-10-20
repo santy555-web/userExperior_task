@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppService } from '../services/app.service';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-vaccine',
@@ -10,7 +10,7 @@ export class VaccineComponent implements OnInit {
   selectedCountry:string;
   vaccinatedList = [];
   vaccinated_country = [];
-  constructor(private vaccine_service:AppService) { }
+  constructor(private vaccine_service:DataService) { }
 
   ngOnInit(): void {
     this.selectedCountry = 'India';

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppService } from '../services/app.service';
+import { DataService } from '../services/data.service';
 import { MyToasterService } from '../services/toastr.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class StateComponent implements OnInit {
   countryName :string ;
   temp;
   result;
-  constructor(private service :AppService, private toaster: MyToasterService) { }
+  constructor(private service :DataService, private toaster: MyToasterService) { }
 
   ngOnInit(): void {
     this.service.getCountryData('').subscribe((data) => {

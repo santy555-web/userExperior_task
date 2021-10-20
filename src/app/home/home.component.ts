@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppService } from '../services/app.service';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   public active_ratio: any;
   public recovery_ratio: any;
   public death_ratio: any;
-  constructor(private service: AppService) {}
+  constructor(private service: DataService) {}
 
   ngOnInit(): void {
     this.selectedCountry = 'India';

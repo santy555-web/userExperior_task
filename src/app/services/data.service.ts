@@ -4,7 +4,7 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class AppService {
+export class DataService {
     countryurl=environment.country_list;
   constructor(private http:HttpClient) { }
 
