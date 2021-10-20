@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+*,*::after,*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 14px;
+  color: #333;
+  background: #e9ecef;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10px
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

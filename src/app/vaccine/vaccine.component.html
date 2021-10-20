@@ -1,0 +1,55 @@
+<div class="d-flex w-100 flex-column">
+  <div
+    class="
+      sidebar-header
+      d-flex
+      justify-content-between
+      align-items-center
+      w-100
+    "
+  >
+    <div class="position-relative">
+      <p class="top-title mb-0 ml-4 font-weight-bold ">{{ selectedCountry }}</p>
+    </div>
+    <div
+      class="d-flex justify-content-center align-items-center"
+      style="width: 200px"
+    >
+      <!-- <i class="fa fa-bell" aria-hidden="true"></i> -->
+      <div class="user-wrap float-right ml-0 position-relative">
+        <div class="mb-0 mr-3">
+          <select
+            class="custom-select"
+            *ngFor="let country of vaccinated_country"
+            [(ngModel)]="selectedCountry"
+            (ngModelChange)="onChange($event)"
+          >
+            <option selected value="India">India</option>
+            <option *ngFor="let data of country | keyvalue" [value]="data.key">
+              {{ data.key }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container card-content" style="height: 88vh">
+    <div class="table-responsive mt-3">
+      <table class="table table-bordered" *ngFor="let item of vaccinatedList">
+        <tbody>
+          <tr>
+            <td>Administered</td>
+            <td>{{ item.All.administered }}</td>
+          </tr>
+          <tr>
+            <td>People Vaccinated</td>
+            <td>{{ item.All.people_vaccinated }}</td>
+          </tr>
+          <tr>
+            <td>People Partially Vaccinated</td>
+            <td>{{ item.All.people_partially_vaccinated }}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>

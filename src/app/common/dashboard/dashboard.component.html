@@ -1,0 +1,50 @@
+<div class="main d-flex flex-column">
+  <div class="d-flex w-100 h-100">
+
+    <div [ngClass]="[toggle ? 'sidebar left' : 'sidebar fliph left']">
+      <div class="bar-btn position-absolute text-right"></div>
+      <ul class="list-sidebar bg-default list-unstyled">
+        <li>
+            <a
+            *ngIf="toggle"
+              class=" nav-link d-flex justify-content-end align-items-center"
+              (click)="setToggle()" >
+              <i class="fa fa-angle-double-left"></i>
+            </a>
+            <a
+            *ngIf="!toggle"
+              class=" nav-link d-flex justify-content-end align-items-center"
+              (click)="setToggle()"
+            >
+              <i class="fa fa-angle-double-right"></i>
+            </a>
+        </li>
+        <li>
+
+          <a routerLink="/home" routerLinkActive="active" class="collapsed nav-link">
+            <i class="fa fa-th-large"></i>
+            <span class="nav-label"> Home</span>
+          </a>
+        </li>
+        <li>
+
+          <a routerLink="/state" routerLinkActive="active" class="nav-link">
+            <i class="fas fa-city"></i>
+            <span class="nav-label"> States</span>
+          </a>
+        </li>
+        <li>
+
+          <a routerLink="/vaccine" routerLinkActive="active" class="nav-link">
+            <i class="fas fa-syringe"></i>
+            <span class="nav-label"> Vaccine</span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+   <div class="container-r">
+      <router-outlet></router-outlet>
+   </div>
+  </div>
+</div>

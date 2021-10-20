@@ -1,0 +1,63 @@
+.sidebar-header {
+  background-color: #fff;
+  height: 54px;
+  border-bottom: 1px solid #ced4da;
+}
+.top-title {
+  cursor: pointer;
+}
+.user-wrap {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+.user-wrap:hover .user-content {
+  display: block;
+}
+.custom-select {
+  height: calc(1.95rem + 2px) !important;
+  padding: 0.275rem 3.75rem 0.275rem 0.75rem !important;
+}
+.card-content {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: 100%;
+}
+.container {
+  width: 96% !important;
+  margin: 10px auto !important;
+}
+.contain{
+  height: auto;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 536px !important;
+    margin: 10px auto !important;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 750px !important;
+    margin: 10px auto !important;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px !important;
+    margin: 10px auto !important;
+  }
+  .contain{
+    height: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1160px !important;
+    margin: 10px auto !important;
+  }
+  .contain{
+    height: 100%;
+  }
+}
